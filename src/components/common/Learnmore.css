@@ -1,0 +1,24 @@
+.about-info{
+    text-align: center;
+    margin-top:60px;
+}
+.learn-more{
+    text-align: center;
+    margin-top:60px;
+}
+.learn-more p {
+    font-size: 13px;
+}
+.learn-more h1{
+    font-size: 39px;
+    margin-bottom: 50px;
+}
+body{
+    background-image: url("https://s3.amazonaws.com/discoverhealling-wp/wp-content/uploads/2017/11/12221506/background-light.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.links{
+    font-size: 20px;
+
+}

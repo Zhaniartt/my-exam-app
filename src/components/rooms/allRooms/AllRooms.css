@@ -1,0 +1,39 @@
+.title{
+    font-size: 40px;
+    font-family: Chalkduster, fantasy;
+    text-align: center;
+    padding-bottom: 70px;
+    padding-top: 30px;
+}
+table{
+    margin-bottom: 80px;
+}
+.table-title{
+    font-size: 13px;
+    font-family: Marker Felt, fantasy;
+    font-size: 16px;
+}
+.table-sections:hover{
+    font-size: 120%;
+    background: #007b5e;
+
+}
+.table-sections:active{
+}
+.button5 {
+    background-color: darkgreen;
+    color: black;
+    border: 2px solid green;
+  }
+  
+  .button5:hover {background-color: black;}
+  .noRooms{
+      text-align: center;
+      margin-top: 120px;
+      margin-bottom: 120px;
+  }
+  .createLink{
+      font-size: 30px;
+      padding-top: 40px;
+      color: #007b5e;
+  }
