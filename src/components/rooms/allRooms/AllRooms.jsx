@@ -84,7 +84,7 @@ export class AllRooms extends Component {
         })
      
         return (
-        <div>
+        <div className="body-allrooms">
 
             {this.state.isEmpty && <div className="noRooms">
            

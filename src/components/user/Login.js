@@ -1,11 +1,11 @@
 
 import React, { Component } from 'react'
+import { Redirect } from 'react-router'
 
 import './Login.css'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
-import {Redirect} from 'react-router-dom'
 import auth from '../auth'
 import observer from '../observer'
 
@@ -16,9 +16,17 @@ export class Login extends Component {
     this.state = {
         username: null,
         password: null,
-        errors: ''
+        errors: '',
+        redirect: false
     }
   } 
+  componentDidMount(){
+    if(sessionStorage.getItem('user')){
+        this.setState({
+          redirect: true
+        })
+    }
+  }
   handleChange = ev =>{
     let fieldName = ev.target.name;
     let fieldValue = ev.target.value;
@@ -44,7 +52,11 @@ export class Login extends Component {
 
   render() {
     const {errors} = this.state;
+    const { redirect } = this.state;
 
+    if (redirect) {
+      return <Redirect to='/'/>;
+    }
     return (
       <div>
       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />

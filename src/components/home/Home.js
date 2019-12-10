@@ -9,7 +9,7 @@ const Home = () => {
         <section id="banner">
         <div class="inner">
             <header>
-                <h1>This is QuestionsDo by Zhani AY.</h1>
+                <h1>This is QuestionsDo by Zhani A.</h1>
                 <p>QuestionsDo is the ultimate Q&A and polling platform for meetings and events.<br /> It offers interactive Q&A, live polls and insights about your audience.</p>
             </header>
             <Router>
