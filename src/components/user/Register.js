@@ -3,7 +3,8 @@ import React, { Component } from 'react'
     import { BrowserRouter as Router } from 'react-router-dom';
     import { Route, Link } from 'react-router-dom';
     import { Switch } from 'react-router-dom';
-    import {Redirect} from 'react-router-dom'
+    import { Redirect } from 'react-router'
+    
     import auth from '../auth'
 import requester from '../requester';
 
@@ -22,7 +23,15 @@ export class Register extends Component {
               username: '',
               password_confirm: '',
               password: ''
-            }
+            },
+            redirect: false
+        }
+      }
+      componentDidMount(){
+        if(sessionStorage.getItem('user')){
+            this.setState({
+              redirect: true
+            })
         }
       }
       handleChange = ev =>{
@@ -72,7 +81,12 @@ export class Register extends Component {
 
   render() {
     const {errors} = this.state;
+    const { redirect } = this.state;
 
+    if (redirect) {
+      return <Redirect to='/'/>;
+    }
+    
     return (
       <div className="text-center" style={{padding: '50px 0'}}>
       <div className="logo">register</div>

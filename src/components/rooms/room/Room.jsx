@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router'
+
     import './css/main.css'
     import './css/util.css'
     import './images/icons/favicon.ico'
@@ -21,9 +23,19 @@ export class Room extends Component {
                 password:null,
                 service:null,
                 message:null,
-                creator: null
+                creator: null,
+                redirect: false
+
             }
         }
+        componentDidMount(){
+          if(!sessionStorage.getItem('user')){
+              this.setState({
+                redirect: true
+              })
+          }
+        }
+
         handleSubmit = (ev) =>{
             ev.preventDefault();
             
@@ -43,6 +55,13 @@ export class Room extends Component {
         }
 
     render() {
+      const { redirect } = this.state;
+
+      if (redirect) {
+        return <Redirect to='/'/>;
+      }
+    
+      
         return (
             <div className="create-room">
             <title>Contact V5</title>

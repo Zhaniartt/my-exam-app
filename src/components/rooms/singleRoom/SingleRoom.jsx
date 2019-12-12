@@ -3,16 +3,25 @@ import requester from '../../requester'
 import QuestionForm from '../questionForm/QuestionForm'
 import './SingleRoom.css'
 import roomService from '../../roomsService'
+import { Redirect } from 'react-router'
+
 export class SingleRoom extends Component {
     constructor(props){
         super(props)
 
         this.state = {
             currentid: props.match.params.id,
-            data: ''
+            data: '',
+            redirect: false
         }
     }
     componentDidMount(){
+        if(!sessionStorage.getItem('user')){
+            this.setState({
+              redirect: true
+            })
+        }
+
         requester.get('appdata', 'rooms', 'kinvey').then(data=>{
                let searchingItem = data.filter(x=> x._id === this.state.currentid)
                this.setState({
@@ -33,6 +42,13 @@ export class SingleRoom extends Component {
         let name = []
         let department = [] 
         let creator
+        
+        const { redirect } = this.state;
+
+        if (redirect) {
+          return <Redirect to='/'/>;
+        }
+      
         
         Array.from(this.state.data).map(r=>
         {

@@ -1,5 +1,4 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import observer from '../observer'
 

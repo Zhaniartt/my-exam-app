@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import requester from '../../requester'
 import './AllRooms.css'
 import roomService from '../../roomsService'
+import { Redirect } from 'react-router'
+
 
 export class AllRooms extends Component {
     constructor(props){
@@ -14,7 +16,8 @@ export class AllRooms extends Component {
                 targetPassword:'',
                 errors:'',
                 length: 0,
-                isEmpty: true
+                isEmpty: true,
+                redirect: false
             };
             this.getData = this.getData.bind(this)
     }
@@ -47,6 +50,12 @@ export class AllRooms extends Component {
           })
     }
     componentDidMount(){
+        if(!sessionStorage.getItem('user')){
+            this.setState({
+              redirect: true
+            })
+        }
+
         this.getData();
     }
  
@@ -82,7 +91,12 @@ export class AllRooms extends Component {
         this.state.allrooms.map(r=>{
             s.push(r)
         })
-     
+        const { redirect } = this.state;
+
+        if (redirect) {
+          return <Redirect to='/'/>;
+        }
+
         return (
         <div className="body-allrooms">
 
