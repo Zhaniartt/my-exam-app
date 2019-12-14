@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import requester from '../../requester'
+import requester from '../../services/requester'
 import './QuestionForm.css'
-import roomService from '../../roomsService'
+import roomService from '../../services/roomsService'
 import { withRouter } from 'react-router-dom'
 
 export class QuestionForm extends Component {

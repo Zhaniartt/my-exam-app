@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import requester from '../requester'
+import requester from '../services/requester'
 import './Profile.css'
 
 export class Profile extends Component {

@@ -6,8 +6,8 @@ import './Login.css'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
-import auth from '../auth'
-import observer from '../observer'
+import auth from '../services/auth'
+import observer from '../services/observer'
 
 
 export class Login extends Component {

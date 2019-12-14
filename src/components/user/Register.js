@@ -5,9 +5,7 @@ import React, { Component } from 'react'
     import { Switch } from 'react-router-dom';
     import { Redirect } from 'react-router'
     
-    import auth from '../auth'
-import requester from '../requester';
-
+    import auth from '../services/auth'
 
 export class Register extends Component {
       constructor(props){

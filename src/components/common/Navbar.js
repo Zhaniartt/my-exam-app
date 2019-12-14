@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import React, { Component } from 'react';
-import observer from '../observer'
+import observer from '../services/observer'
 
 export default class Navbar extends  Component {
     constructor(props){

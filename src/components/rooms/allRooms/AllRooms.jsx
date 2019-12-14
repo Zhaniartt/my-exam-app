@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import requester from '../../requester'
+import requester from '../../services/requester'
 import './AllRooms.css'
-import roomService from '../../roomsService'
+import roomService from '../../services/roomsService'
 import { Redirect } from 'react-router'
 
 

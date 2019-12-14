@@ -12,7 +12,7 @@ import { Redirect } from 'react-router'
     import './vendor/select2/select2.min.css'
     import './vendor/daterangepicker/daterangepicker.css'
 
-    import roomsService from '../../roomsService'
+    import roomsService from '../../services/roomsService'
 export class Room extends Component {
         constructor(props){
             super(props)

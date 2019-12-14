@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import requester from '../../requester'
+import requester from '../../services/requester'
 import QuestionForm from '../questionForm/QuestionForm'
 import './SingleRoom.css'
-import roomService from '../../roomsService'
+import roomService from '../../services/roomsService'
 import { Redirect } from 'react-router'
 
 export class SingleRoom extends Component {
