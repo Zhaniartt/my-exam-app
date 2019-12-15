@@ -5,9 +5,6 @@ let recipesService = (() => {
         return requester.get('appdata', 'rooms', 'kinvey');
     }
 
-    function loadRecipeDetails(recipeId) {
-        return requester.get('appdata', 'recipes/' + recipeId, 'kinvey');
-    }
     function loadUSer(userId) {
         return requester.get('user', + userId , 'kinvey');
     }
@@ -46,7 +43,6 @@ let recipesService = (() => {
 
     return {
         loadRooms,
-        loadRecipeDetails,
         createRecipe,
         deleteMsg,
         messageImport,

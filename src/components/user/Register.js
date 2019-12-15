@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
     import './style.css'
-    import { BrowserRouter as Router } from 'react-router-dom';
     import { Route, Link } from 'react-router-dom';
-    import { Switch } from 'react-router-dom';
     import { Redirect } from 'react-router'
     
     import auth from '../services/auth'
@@ -22,6 +20,7 @@ export class Register extends Component {
               password_confirm: '',
               password: ''
             },
+            kinveyError: '',
             redirect: false
         }
       }
@@ -73,12 +72,17 @@ export class Register extends Component {
         auth.register(this.state).then(res=>{
         auth.saveSession(res);
         document.location.href = '/login'
+        }).catch(err=>{
+          this.setState({
+            kinveyError: err.responseJSON.description
+          })
         })
       }
  
 
   render() {
     const {errors} = this.state;
+    const {kinveyError} = this.state
     const { redirect } = this.state;
 
     if (redirect) {
@@ -88,6 +92,10 @@ export class Register extends Component {
     return (
       <div className="text-center" style={{padding: '50px 0'}}>
       <div className="logo">register</div>
+      <p>   {kinveyError.length > 0 && 
+                <span className='error'>{kinveyError}</span>}
+      </p>
+
       <div className="login-form-1">
         <form id="register-form" className="text-left" onSubmit={this.handleSubmit}>
           <div className="login-form-main-message" />
