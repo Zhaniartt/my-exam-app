@@ -1,1 +1,1 @@
-# my-exam-app
+Run npm install before usage
